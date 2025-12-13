@@ -7,8 +7,6 @@
     const result = document.getElementById("result")
     const flagBtn = document.getElementById("flags")
 
-    text.value = "thiss iss it"
-
     // adding event listener to highlight matches button
     highlightBtn.addEventListener("click", () => {
         if (regex.value !== "" && text.value !== "") {
@@ -16,6 +14,7 @@
         }
     })
 
+    // showing result box content
     function showingResultBox() {
         // getting regex pattern and text to match
         let pattern = regex.value;
@@ -127,6 +126,16 @@
             flagBtn.value = result;
         }
 
+    }
+
+    // adding event listenre to reset button
+    document.getElementById("clear").addEventListener("click",clearAll)
+
+    // clear the page
+    function clearAll() {
+        regex.value="";
+        text.value="";
+        result.innerHTML="";
     }
 
 
